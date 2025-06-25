@@ -1,0 +1,24 @@
+@use '../../../../public/styles/variables.scss' as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 8%;
+  background-color: $color-primary-3;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo img {
+  width: 200px; // ou 100px, 150px — você escolhe
+  height: auto; 
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: $color-primary-9;
+
+}
