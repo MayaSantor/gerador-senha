@@ -1,1 +1,61 @@
-<p>base works!</p>
+
+    <main class="container-input">
+        <div class="base">
+        <span>Tamanho <span id="valor"> {{tamanhoSenha}} </span> caracteres </span>
+        <input id="slider" class="slider" type="range" name="gerador" min="5" max="30" value="15"   [(ngModel)]="tamanhoSenha">
+        <div class="item">
+            <label>
+                <input type="checkbox" name="include_uppercase" [(ngModel)]="incluirMaiuscula">
+                <span class="checkmark"></span>
+                Incluir letras maiúsculas
+            </label>
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="include_lowercase" [(ngModel)]="incluirMinuscula">
+                <span class="checkmark"></span>
+                Incluir letras minúsculas
+            </label>
+        </div>
+
+        <div class="item">
+            <label>
+                <input type="checkbox" name="include_number" [(ngModel)]="incluirNumeros">
+                <span class="checkmark"></span>
+                Incluir números
+            </label>
+        </div>
+        
+        <div class="item">
+            <label>
+                <input type="checkbox" name="include_special_character" [(ngModel)]="incluirEspeciais">
+                <span class="checkmark"></span>
+                Incluir caracteres especiais
+            </label>
+        </div>
+
+
+        <button id="button" class="button-cta"  (click)="gerarSenha()"> Gerar senha</button>
+    </div>
+    </main>
+
+    <div id="container-password" class="container-password hide"  [class.hide]="!mostrarSenha" (click)="copiarSenha()">
+        <span class="title">Sua senha gerada foi:</span>
+        <span id="password"  class="password">{{senhaGerada}}</span>
+        <span class="tooltip">Clique na senha para copiar.☝️</span>
+    </div>
+
+
+    <div   id="custom-popup"
+  class="popup"
+  [class.hide]="!popupAtivo"
+  tabindex="-1"
+  role="alertdialog"
+  aria-live="assertive">
+        <div class="popup-content">
+            <span id="popup-message">{{ popupMensagem}} </span>
+            <button id="popup-close" (click)="fecharPopup()">Fechar</button>
+        </div>
+    </div>
+    
